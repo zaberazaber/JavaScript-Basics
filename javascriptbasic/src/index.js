@@ -3,13 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter , Route} from 'react-router-dom';
-import Navigation from './navbar'
+import {
+    BrowserRouter,
+    Switch,
+    Route,
+    // Link,
+    // useParams,
+    // useRouteMatch
+  } from "react-router-dom";
 
 ReactDOM.render(
     <BrowserRouter>
       <React.Fragment>
-        <Route exact path="/" component={Navigation} />
+          <Switch>
+        <Route exact path="/" component={App} />
+        <Route path="/variable/" component={App} />
+        </Switch>
       </React.Fragment>
     </BrowserRouter>, document.getElementById('root')
   );
